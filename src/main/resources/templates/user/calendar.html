@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+
+    <h1 th:text="${title}">Default Title</h1>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">XYZ Clinic</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Welcome Doctor/Username</a></li>
+            <!--<li><a href="#">My Profile</a></li>-->
+            <!--<li><a href="#">Medications</a></li>-->
+            <!--<li><a href="#">Schedule Appointments</a></li>-->
+            <!--<li><a href="#">Equiry Chat</a></li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<!--Calendar-->
+<!--https://calendar.google.com/calendar?cid=bDlhZ2ZxcWJzYnBtY3B1YWNoMW5rbGtocjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ-->
+
+
+
+<!--<button id="btnCreateEvents" class="btn btn-primary" onclick="makeApiCall();">-->
+    <!--Create Events</button>-->
+
+<!--<div id="divifm">-->
+    <!--<iframe src="https://calendar.google.com/calendar/embed?src=l9agfqqbsbpmcpuach1nklkhr8%40group.-->
+                <!--calendar.google.com&ctz=America%2FChicago"-->
+            <!--style="border: 0" width="800" height="600" frameborder="0" scrolling="no">-->
+
+    <!--</iframe>-->
+<!--</div>-->
+
+<div>
+    <pre>
+
+
+
+
+    </pre>
+</div>
+<section id="calendar" class="calendar_area">
+    <div class="container">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=l9agfqqbsbpmcpuach1nklkhr8%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+</section>
+
+
+</body>
+</html>

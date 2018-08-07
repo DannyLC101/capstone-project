@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+
+    <h1 th:text="${title}">Default Title</h1>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">XYZ Clinic</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Welcome Doctor/Username</a></li>
+            <!--<li><a href="#">My Profile</a></li>-->
+            <!--<li><a href="#">Medications</a></li>-->
+            <!--<li><a href="#">Schedule Appointments</a></li>-->
+            <!--<li><a href="#">Equiry Chat</a></li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!--Button Groups-->
+<div id="pricing" class="container-fluid">
+    <div class="text-center">
+        <pre>  </pre>
+        <h2>Doctor Dashboard</h2>
+    </div>
+    <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-user logo-small"></span>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/profile'">My Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-calendar logo-small"></span>
+                </div>
+
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/scheduleAppointment'">Schedule Appointment</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-scale logo-small"></span>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/previousAppointment'">Previous Appointment</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-folder-open logo-small"></span>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/report'">Patient's Reports</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-grain logo-small"></span>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/medication'">Patient's Medication</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-send logo-small"></span>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-lg" onclick="window.location.href='/Doctor/inquire'">Answer Inquire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

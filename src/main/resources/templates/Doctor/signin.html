@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <h1 th:text="${title}">Default Title</h1>
+</head>
+
+<body>
+<div class="container-fluid">
+    <img src="https://www.jccmi.edu/wp-content/uploads/Health-Clinic-Banner.jpg" alt="Clinic Management System" style="width:100%;"/>
+    <h1 th:text="${title}"></h1>
+    <form method="post" style="max-width:600px;" th:object="${doctor}">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"/>
+        </div>
+
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>

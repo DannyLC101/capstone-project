@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">My Cheeses</title>
+
+    <!--<link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <script type="text/javascript" th:src="@{/js/script.js}" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+.button {
+  padding: 10px 25px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #00b8e6;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #006680}
+
+.button:active {
+  background-color: #002933;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+<!--user/index page-->
+.panel {
+    border: 1px solid #f4511e;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+    border-radius: 30px;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #00b8e6;
+    background-color: #fff !important;
+    color: #00b8e6;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #00b8e6 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-radius: 10px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+    border-radius: 10px;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #00b8e6;
+    color: #fff;
+}
+
+.logo-small {
+    color: black;
+    font-size: 50px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+<nav th:fragment = "navigation">
+    <a href="/cheese">List</a>
+    <a href="/cheese/add">Add</a>
+    <a href="/cheese/remove">Delete</a>
+</nav>
+
+
+
+<nav th:fragment = "hello">
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+</nav>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+    <h1 th:text="${title}">Default Title</h1>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <img src="https://www.jccmi.edu/wp-content/uploads/Health-Clinic-Banner.jpg" alt="Clinic Management System" style="width:100%;"/>
+    <h1 th:text="${title}"></h1>
+
+    <form method="POST" style="max-width:600px;"  th:action="@{/user/welcome}" th:object="${user}" >
+
+        <div class="form-group">
+            <label th:for="username">Username</label>
+            <input class="form-control" th:field="*{username}" />
+            <span th:errors="*{username}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label th:for="pwHash">Password</label>
+            <input class="form-control" th:field="*{pwHash}" type="password" />
+            <span th:errors="*{pwHash}" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label th:for="verifyPassword">Verify Password</label>
+            <input class="form-control" th:field="*{verifyPassword}" type="password" />
+            <span th:errors="*{verifyPassword}" class="error"></span>
+        </div>
+
+        <input type="submit" value="Register" />
+    </form>
+</div>
+</body>
+</html>
