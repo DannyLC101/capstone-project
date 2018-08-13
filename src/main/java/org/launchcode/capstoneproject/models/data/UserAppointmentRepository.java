@@ -14,5 +14,9 @@ public interface UserAppointmentRepository extends CrudRepository<UserAppointmen
 
     public List<UserAppointment> findByStatus(boolean status);
 
+    public List<UserAppointment> findByUsernameAndStatus(String username, boolean status);
+
     public UserAppointment findByAppointmentid(Long appointmentid);
+
+    public List<UserAppointment> findAll();
 }

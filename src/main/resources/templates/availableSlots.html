@@ -6,67 +6,59 @@
 </head>
 
 <body>
-
-<table>
+<h2> These are the all slots with status </h2>
+<table style="border: 1px solid black">
     <thead>
-    <tr>
-        <th> Title </th>
+    <tr style="border: 1px solid black">
 
+        <td style="border: 1px solid black"><strong>ID</strong></td>
+        <td style="border: 1px solid black"><strong>Name</strong></td>
+        <td style="border: 1px solid black"><strong>Time</strong></td>
+        <td style="border: 1px solid black"><strong>Status</strong></td>
     </tr>
     </thead>
     <tbody>
-    <tr th:if="${userAppointments.empty}">
-        <td colspan="2"> No Slots Available </td>
+
+    <tr th:each="userAppointment : ${userAppointments}" th:if="${userAppointment.username != 'doctor'}">
+
+        <td style="border: 1px solid black" ><span th:text="${userAppointment.appointmentid}"> ID </span></td>
+        <td style="border: 1px solid black"><span th:text="${userAppointment.username}"> Name </span></td>
+        <td style="border: 1px solid black"><span th:text="${userAppointment.appointtime}"> Time </span></td>
+
+        <td style="border: 1px solid black" th:if="${userAppointment.status}">
+            <span> Booked </span>
+        </td>
+        <td  style="border: 1px solid black" th:unless="${userAppointment.status}">
+            <span> Available </span>
+        </td>
+
     </tr>
-    <tr th:each="userAppointment : ${userAppointments}">
-        <td><span th:text="${userAppointment.appointmentid}"> ID </span></td>
-        <td><span th:text="${userAppointment.appointtime}"> Time </span></td>
+    <tr th:each="userAppointment : ${userAppointments}" th:if="${userAppointment.username == 'doctor'}">
+
+       <td style="border: 1px solid black" ><span th:text="${userAppointment.appointmentid}"> ID </span></td>
+        <td align="center" style="border: 1px solid black">-</td>
+        <td style="border: 1px solid black"><span th:text="${userAppointment.appointtime}"> Time </span></td>
+
+       <td style="border: 1px solid black" th:if="${userAppointment.status}">
+            <span> Booked </span>
+        </td>
+        <td  style="border: 1px solid black" th:unless="${userAppointment.status}">
+            <span> Available </span>
+        </td>
+
     </tr>
     </tbody>
 </table>
 
-<!--<nav class="navbar">-->
-    <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-                <!--<span class="icon-bar"></span>-->
-            <!--</button>-->
-            <!--<a class="navbar-brand" href="#">Logo</a>-->
-        <!--</div>-->
-        <!--<div class="collapse navbar-collapse" id="myNavbar">-->
-            <!--<ul class="nav navbar-nav">-->
-                <!--<li class="active"><a href="#">Home</a></li>-->
-                <!--<li><a href="#">About</a></li>-->
-                <!--<li><a href="#">Projects</a></li>-->
-                <!--<li><a href="#">Contact</a></li>-->
-            <!--</ul>-->
-            <!--<ul class="nav navbar-nav navbar-right">-->
-                <!--<li><a th:href="@{/home}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</nav>-->
-
 <div class="container-fluid">
-    <img src="https://www.jccmi.edu/wp-content/uploads/Health-Clinic-Banner.jpg" alt="Clinic Management System" style="width:100%;"/>
 
-    <!--<div class="btn-group btn-group-justified"><div class="btn-group">-->
-        <!--<button type="button" class="btn btn-primary btn-lg">Admin Login</button>-->
-    <!--</div>-->
-        <!--<div class="btn-group">-->
-            <!--<button type="button" class="btn btn-primary btn-lg">Doctor Login</button>-->
-        <!--</div>-->
-        <!--<div class="btn-group">-->
-            <!--<button type="button" class="btn btn-primary btn-lg">User Login</button>-->
-        <!--</div>-->
-    <!--</div>-->
+    <button onclick="window.location.href='/appointments/createappointment'" class="button">Create new Appointments</button>
+
 </div>
 
 
 <footer class="container-fluid text-center">
-    <p>Footer Text</p>
+    <p>This page shows the available appointment time slots to Doctor</p>
 </footer>
 </body>
 </html>

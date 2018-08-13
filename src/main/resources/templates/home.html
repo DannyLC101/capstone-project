@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments :: head">
     <h1 th:text="${title}">Default Title</h1>
 </head>
@@ -51,14 +52,26 @@
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav">
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
+            <p><a href="#">Some News Link</a></p>
+            <p><a href="#">Some News Link</a></p>
+            <p><a href="#">Some News Link</a></p>
+            <p><a href="#">Some News Link</a></p>
+            <p><a href="#">Some News Link</a></p>
+            <p><a href="#">Some News Link</a></p>
         </div>
         <div class="col-sm-8 text-left">
-            <h1>Welcome</h1>
+            <h1>Welcome to MY CLINIC</h1>
+            <address>
+                Visit us at:<br />
+                SampleWebSite.com<br />
+                XYZ Blvd, Suit 123<br />
+                USA
+            </address>
 
+            <p>To see or schedule your appointments, Please Login.</p>
+            <p>Register if you are a new patient.</p>
         </div>
+
         <div class="col-sm-2 sidenav">
 
             <div sec:authorize='!isAuthenticated()' class="well">
