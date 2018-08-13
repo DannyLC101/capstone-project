@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" media="screen"
+          href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css"/>
+</head>
+<body>
+<h2>Create new upcoming appointment time slots</h2>
+
+<span th:if="${error != null}"> This Date and Time is already scheduled, please choose another date and time </span>
+
+<form th:object="${newAppointment}" method="post" style="max-width:600px;">
+<div id="datetimepicker" class="input-append date">
+    <label th:for="appointtime">Pick date and time for Appointments</label>
+    <input type="text" th:field="*{appointtime}" data-provide="datepicker" class="form-control"/>
+
+    <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+</div>
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
+<script type="text/javascript"
+        src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+</script>
+<script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+</script>
+<script type="text/javascript"
+        src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+</script>
+<script type="text/javascript">
+      <!--$('#datetimepicker').datetimepicker({-->
+        <!--format: 'dd/MM/yyyy hh:mm',-->
+        <!--startDate: '-0d',      // set a minimum date-->
+        <!--endDate: Infinity,-->
+        <!--pickSeconds: false,-->
+        <!--daysOfWeekDisabled: [0, 6]-->
+      <!--});-->
+
+
+
+//
+      $(function () {
+
+
+  var date = new Date();
+  date.setDate(date.getDate());
+
+  $('#datetimepicker').datetimepicker({
+
+   startDate: date,
+   format: 'MM/dd/yyyy hh:mm',
+   pickSeconds: false
+
+  });
+
+
+});
+    </script>
+    <input type="submit" value="Create Appointment" />
+
+    <div class="form-group">
+        <button type="button" onclick="window.location.href='/user/index'">Done Adding Appointments</button>
+    </div>
+
+   <!-- <p th:unless="${appointments} and ${appointments.size()}">No appointment scheduled :(</p>
+    <div>
+        <table class="table">
+            <tr>
+                <th>User Name</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+            </tr>
+
+            <tr th:each="a : ${appointments}">
+                <td th:text="${a.username}">Booked By</td>
+                <td th:text="${a.appointtime}">Date and Time</td><br/>
+                &lt;!&ndash;<td th:text="${a.status = 0}">Status</td>&ndash;&gt;
+                <td>
+                    <span th:if="${a.status == 0}">Not Booked</span>
+                    <span th:unless="${a.status == 1}">Booked</span>
+                </td>
+                &lt;!&ndash;<td><a th:href="@{'/cheese/edit.html' + ${c.cheeseId}}">Edit</a></td>&ndash;&gt;
+            </tr>
+        </table>
+    </div>-->
+</form>
+</body>
+</html>
