@@ -40,16 +40,16 @@
         <div sec:authentication="principal.authorities"></div>
     </div>
     <div class="row slideanim">
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <span class="glyphicon glyphicon-user logo-small"></span>
-                </div>
-                <div sec:authorize="hasRole('ROLE_MYPROFILE')" class="panel-footer">
-                    <button class="btn btn-lg" onclick="window.location.href='/user/myprofile'" >My Profile</button>
-                </div>
-            </div>
-        </div>
+        <!--<div class="col-sm-4 col-xs-12">-->
+            <!--<div class="panel panel-default text-center">-->
+                <!--<div class="panel-heading">-->
+                    <!--<span class="glyphicon glyphicon-user logo-small"></span>-->
+                <!--</div>-->
+                <!--<div sec:authorize="hasRole('ROLE_MYPROFILE')" class="panel-footer">-->
+                    <!--<button class="btn btn-lg" onclick="window.location.href='/user/myprofile'" >My Profile</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <div class="col-sm-4 col-xs-12" sec:authorize="hasRole('ROLE_SCHEDULE_APPOINTMENT')">
             <div class="panel panel-default text-center">
