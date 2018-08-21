@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title th:text="${title}">My Cheeses</title>
@@ -98,7 +98,26 @@
     <a href="/cheese/remove">Delete</a>
 </nav>
 
-
+<nav th:fragment = "navLogout" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">My Clinic</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+            </li>
+            <!--<li><a href="#">My Profile</a></li>-->
+            <!--<li><a href="#">Medications</a></li>-->
+            <!--<li><a href="#">Schedule Appointments</a></li>-->
+            <!--<li><a href="#">Equiry Chat</a></li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <div sec:authorize='isAuthenticated()' class="panel-heading">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </div>
+        </ul>
+    </div>
+</nav>
 
 <nav th:fragment = "hello">
 
