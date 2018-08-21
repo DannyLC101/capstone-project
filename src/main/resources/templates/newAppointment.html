@@ -6,6 +6,7 @@
           href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css"/>
 </head>
 <body>
+
 <h2>Create new upcoming appointment time slots</h2>
 
 <span th:if="${error != null}"> This Date and Time is already scheduled, please choose another date and time </span>
@@ -63,7 +64,7 @@
     <input type="submit" value="Create Appointment" />
 
     <div class="form-group">
-        <button type="button" onclick="window.location.href='/user/index'">Done Adding Appointments</button>
+        <button type="button" onclick="window.location.href='/appointments/getAllAvailableSlots'">Done Adding Appointments</button>
     </div>
 
    <!-- <p th:unless="${appointments} and ${appointments.size()}">No appointment scheduled :(</p>
